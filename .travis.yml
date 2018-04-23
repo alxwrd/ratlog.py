@@ -16,4 +16,4 @@ before_install:
 script:
     - pipenv run pycodestyle ratlog/
     - pipenv run pycodestyle tests/
-    - pipenv run python -m unittest discover tests/
+    - pipenv run python -m pytest
