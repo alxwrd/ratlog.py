@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "version": "alpha",
+    "source": "https://ratlog.github.io/"
+  },
+  "generic": [
+    {
+      "log": "\n",
+      "data": {
+        "message": ""
+      }
+    },
+    {
+      "log": "hi\n",
+      "data": {
+        "message": "hi"
+      }
+    },
+    {
+      "log": "one\\ntwo\\nthree\\n\n",
+      "data": {
+        "message": "one\ntwo\nthree\n"
+      }
+    },
+    {
+      "log": "count | count: 1\n",
+      "data": {
+        "message": "count",
+        "fields": {
+          "count": "1"
+        }
+      }
+    },
+    {
+      "log": "counting event | event: one | count: 1\n",
+      "data": {
+        "message": "counting event",
+        "fields": {
+          "event": "one",
+          "count": "1"
+        }
+      }
+    },
+    {
+      "log": "[event] counting event | count: 1 | event: one\n",
+      "data": {
+        "message": "counting event",
+        "fields": {
+          "count": "1",
+          "event": "one"
+        },
+        "tags": [
+          "event"
+        ]
+      }
+    },
+    {
+      "log": "[event|count] counting event | count: 1 | event: one\n",
+      "data": {
+        "message": "counting event",
+        "fields": {
+          "count": "1",
+          "event": "one"
+        },
+        "tags": [
+          "event",
+          "count"
+        ]
+      }
+    },
+    {
+      "log": "\n",
+      "data": {}
+    },
+    {
+      "log": " | count: 1 | event: 1\n",
+      "data": {
+        "fields": {
+          "count": "1",
+          "event": "1"
+        }
+      }
+    },
+    {
+      "log": "hello | [\\:]key: [value\\:]\n",
+      "data": {
+        "message": "hello",
+        "fields": {
+          "[:]key": "[value:]"
+        }
+      }
+    },
+    {
+      "log": "\\[hello \\| world]\n",
+      "data": {
+        "message": "[hello | world]"
+      }
+    },
+    {
+      "log": "[tag] hi\n",
+      "data": {
+        "message": "hi",
+        "tags": [
+          "tag"
+        ]
+      }
+    },
+    {
+      "log": "[tag] hi | yo\n",
+      "data": {
+        "message": "hi",
+        "tags": [
+          "tag"
+        ],
+        "fields": {
+          "yo": null
+        }
+      }
+    },
+    {
+      "log": "[tag] hi | yo :  \n",
+      "data": {
+        "message": "hi",
+        "tags": [
+          "tag"
+        ],
+        "fields": {
+          "yo ": " "
+        }
+      }
+    },
+    {
+      "log": "[tag] count | count: 1\n",
+      "data": {
+        "message": "count",
+        "fields": {
+          "count": "1"
+        },
+        "tags": [
+          "tag"
+        ]
+      }
+    }
+  ],
+  "parsing": [
+    {
+      "log": "count | count 1\n",
+      "data": {
+        "message": "count| count 1"
+      }
+    },
+    {
+      "log": "[tag hi\n",
+      "data": {
+        "message": "[tag hi"
+      }
+    },
+    {
+      "log": "hi |\n",
+      "data": {
+        "message": "hi |"
+      }
+    },
+    {
+      "log": "hi |  \n",
+      "data": {
+        "message": "hi |",
+        "fields": {
+          " ": null
+        }
+      }
+    },
+    {
+      "log": "hi | \n",
+      "data": {
+        "message": "hi |",
+        "fields": {
+          "": null
+        }
+      }
+    },
+    {
+      "log": "hi | hi: |\n",
+      "data": {
+        "message": "hi |hi: |"
+      }
+    },
+    {
+      "log": "hi |hi\n",
+      "data": {
+        "message": "hi |hi"
+      }
+    },
+    {
+      "log": "hi | hi:|\n",
+      "data": {
+        "message": "hi |hi:|"
+      }
+    },
+    {
+      "log": "[tag] hi | yo : \n",
+      "data": {
+        "message": "hi",
+        "tags": [
+          "tag"
+        ],
+        "fields": {
+          "yo ": null
+        }
+      }
+    },
+    {
+      "log": "[tag] hi | yo :\n",
+      "data": {
+        "message": "hi | yo :",
+        "tags": [
+          "tag"
+        ]
+      }
+    },
+    {
+      "log": "[tag] hi | yo: \n",
+      "data": {
+        "message": "hi",
+        "tags": [
+          "tag"
+        ],
+        "fields": {
+          "yo": null
+        }
+      }
+    }
+  ]
+}
