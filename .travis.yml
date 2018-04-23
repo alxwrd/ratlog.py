@@ -1,0 +1,19 @@
+language: python
+python:
+    - "2.7"
+    - "3.3"
+    - "3.4"
+    - "3.5"
+    - "3.6"
+    - "nightly"
+matrix:
+    allow_failures:
+        - python: "2.7"
+        - python: "nightly"
+before_install:
+    - pip install pipenv
+    - pipenv install --dev --skip-lock
+script:
+    - pipenv run pycodestyle ratlog/
+    - pipenv run pycodestyle tests/
+    - pipenv run python -m unittest discover tests/
