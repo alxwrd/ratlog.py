@@ -35,5 +35,6 @@ counting | count: 1
 
 # Adding more tags
 >>> crit = ratlog.Log("warning", "critical")
+>>> crit("shutting down all servers")
 [warning|critical] shutting down all servers
 ```
