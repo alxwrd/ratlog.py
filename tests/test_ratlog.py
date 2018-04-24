@@ -6,7 +6,7 @@ import ratlog
 class MockWriter(object):
 
     def __init__(self):
-        self.value = None
+        self.value = ""
 
     def __call__(self, message):
         self.value = message
