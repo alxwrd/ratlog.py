@@ -47,7 +47,7 @@ class Log:
 
         def create_field(entry):
             key = entry[0] if entry[0] else ""
-            value = entry[1] if entry[1] else ""
-            return " | {}: {}".format(key, value)
+            value = ": {}".format(entry[1]) if entry[1] else ""
+            return " | {}{}".format(key, value)
 
         return "".join(map(create_field, fields.items()))
