@@ -50,7 +50,8 @@ class Log:
             value = ": " + replace("|:", entry[1]) if entry[1] else ""
             return " | {}{}".format(key, value)
 
-        return "".join(map(create_field, fields.items()))
+        sorted_items = sorted(fields.items(), key=lambda item: item[0])
+        return "".join(map(create_field, sorted_items))
 
 
 def replace(chars, string):
