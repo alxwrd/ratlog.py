@@ -25,7 +25,7 @@ hello world
 counting | count: 1
 
 # Add fields and tag
->>> log("counting", {"count": 1}, "negative")
+>>> log("counting", {"count": -1}, "negative")
 [negative] counting | count: -1
 
 # Create another logger bound to a tag
