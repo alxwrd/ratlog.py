@@ -23,7 +23,7 @@ class Log:
         message = self._format_message(message)
         fields = self._format_fields(fields)
 
-        output = replace("\n", tags + message + fields) + "\n"
+        output = escape("\n", tags + message + fields) + "\n"
 
         self.writer(output)
 
@@ -31,13 +31,13 @@ class Log:
     def _format_message(message):
         if not message:
             return ""
-        return replace("[|", message)
+        return escape("[|", message)
 
     @staticmethod
     def _format_tags(tags):
         if not tags:
             return ""
-        joined_tags = "|".join(replace("|]", tag) for tag in tags)
+        joined_tags = "|".join(escape("|]", tag) for tag in tags)
         return "[{}] ".format(joined_tags)
 
     @staticmethod
@@ -46,15 +46,15 @@ class Log:
             return ""
 
         def create_field(entry):
-            key = replace("|:", entry[0]) if entry[0] else ""
-            value = ": " + replace("|:", entry[1]) if entry[1] else ""
+            key = escape("|:", entry[0]) if entry[0] else ""
+            value = ": " + escape("|:", entry[1]) if entry[1] else ""
             return " | {}{}".format(key, value)
 
         sorted_items = sorted(fields.items(), key=lambda item: item[0])
         return "".join(map(create_field, sorted_items))
 
 
-def replace(chars, string):
+def escape(chars, string):
     for char in chars:
         replacement = "\\" + repr(char).replace("'", "").replace("\\", "")
         string = string.replace(char, replacement)
