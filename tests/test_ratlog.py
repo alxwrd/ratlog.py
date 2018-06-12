@@ -42,7 +42,7 @@ class TestRatlog:
 
         log(u"\U0001F984")
 
-        assert "🦄\n" == output.value
+        assert u"🦄\n" == output.value
 
     def test_string_as_fields_makes_tags(self):
         log = ratlog.Log()

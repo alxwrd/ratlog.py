@@ -1,7 +1,13 @@
-
+# -*- coding: utf8 -*-
 from __future__ import print_function
 
 import sys
+
+
+try:
+    str = unicode
+except NameError:
+    pass
 
 
 class Log:
@@ -16,10 +22,20 @@ class Log:
         self.tags = list(args)
 
     def __call__(self, message, fields=None, *tag_args):
+        tag_args = list(tag_args)
+
+        if not isinstance(fields, dict):
+            if fields:
+                tag_args.insert(0, fields)
+                fields = None
+
         if not fields:
             fields = {}
 
-        tags = self._format_tags(self.tags + list(tag_args))
+        if not isinstance(message, str):
+            message = str(message)
+
+        tags = self._format_tags(self.tags + tag_args)
         message = self._format_message(message)
         fields = self._format_fields(fields)
 
