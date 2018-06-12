@@ -63,7 +63,7 @@ class TestRatlog:
 
         log("message", {}, "test3")
 
-        assert "[test1|test2|test3] message\n" == output.value 
+        assert "[test1|test2|test3] message\n" == output.value
 
     def test_allow_permanent_addition_of_more_tags(self):
         log = ratlog.Log("test1")
