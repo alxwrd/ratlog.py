@@ -1,16 +1,10 @@
+<p align="center"><img src="https://raw.githubusercontent.com/ratlog/ratlog-spec/master/rat.png" width="15%"></p>
+
 # :rat: Ratlog.py
 
 _Application Logging for Rats, Humans and Machines_
 
 [![Build Status](https://travis-ci.org/alxwrd/ratlog.py.svg?branch=master)](https://travis-ci.org/alxwrd/ratlog.py)
-
-> **Disclaimer:**
-_The [Ratlog specification](https://github.com/ratlog/ratlog.github.io) is
-still alpha status and might be subject to breaking changes. Beware,
-because of that, this API and format might change significantly. We will
-try our best to tag a stable release as soon as possible.
-[Leave feedback](https://github.com/alxwrd/ratlog.py/issues) and help us
-get there faster!_
 
 ```python
 >>> import ratlog
