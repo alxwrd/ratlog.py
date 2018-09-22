@@ -5,6 +5,7 @@
 _Application Logging for Rats, Humans and Machines_
 
 [![Build Status](https://travis-ci.org/alxwrd/ratlog.py.svg?branch=master)](https://travis-ci.org/alxwrd/ratlog.py)
+[![Downloads](http://pepy.tech/badge/ratlog)](http://pepy.tech/project/ratlog)
 
 ```python
 >>> import ratlog
