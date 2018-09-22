@@ -5,7 +5,7 @@
 _Application Logging for Rats, Humans and Machines_
 
 [![Build Status](https://travis-ci.org/alxwrd/ratlog.py.svg?branch=master)](https://travis-ci.org/alxwrd/ratlog.py)
-[![Downloads](http://pepy.tech/badge/ratlog)](http://pepy.tech/project/ratlog)
+[![Downloads](https://img.shields.io/badge/dynamic/json.svg?url=https://pypistats.org/api/packages/ratlog/recent?mirrors=false&label=downloads&query=$.data.last_month&suffix=/month)](https://pypistats.org/packages/ratlog)
 
 ```python
 >>> import ratlog
